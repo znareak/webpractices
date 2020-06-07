@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Landing Page</title>
+</head>
+<body>
+    
+    <main class="principal">
+        <div class="contenido">
+            <header>
+                <h1>¿Qué es FDDI?</h1>
+            </header> 
+
+            <div class="contenido-principal">
+                <p>
+                    Siguiendo el hilo a alguna de las preguntas de los Webcasts de la semana pasada.
+                </p>
+
+                <p>
+                    FDDI (Fiber Distributed Data Interface) es un conjunto de estándares ANSI e 
+                    ISO para la transmisión de datos en lineas de fibra óptica en redes de área 
+                    local (LAN) que se pueden extender hasta un radio de unos 200km. El protocolo 
+                    FDDI está basado en el protocolo Token Ring. A mayores de cubrir una mayor 
+                    distancia geográfica, las redes de área local FDDI pueden soportan miles de 
+                    usuarios. FDDI se usa con frecuencia para el Backbone para redes de área extensa 
+                    (WAN).
+                </p>
+                <p>
+                    Una red FDDI contiene dos token rings, una como posible backup en el caso de 
+                    un fallo en el anillo primario. El anillo primario ofrece una capacidad de 
+                    hasta 100 Mbps. Si no se necesita el anillo secundario como backup, también 
+                    puede ser usado para el envío de datos, extendiendo la capacidad de FDDI
+                     hasta los 200 Mbps. Un anillo simple se puede extender hasta la máxima
+                      distancia; un anillo dual hasta unos 100km.
+                </p>
+                <p>
+                    Información mucho, mucho más detallada de FDDI en:
+                    http://www.cisco.com/univercd/cc/td/doc/cisintwk/ito_doc/fddi.htm
+                </p>
+                <p>
+                    -Libardo
+                </p>
+            </div>
+
+            <footer>
+                <div class="desc">
+                    <time  class="fecha">
+                        <i class="fa fa-calendar"></i>
+                        12 de Abril del 2001
+                    </time>
+                    
+                    <span class="author">
+                        <i class="fa fa-user"></i>
+                        Libardo Jesus Rengifo
+                    </span>
+                </div>
+
+            </footer>
+        </div>
+
+
+        <aside class="secundario">
+            <div class="titulo-aside">
+                <h2>Internet Information Services 
+                    <label for="toggle-menu" class="label-toggle">
+                        <i class="fa fa-bars"></i>
+                    </label>
+                </h2>
+                <p class="subtitulo">Otro sitio más de Geeks.ms</p>
+                
+                <input type="checkbox" id="toggle-menu">
+
+                <div class="busqueda-aside">
+                    <input type="search" id="q" placeholder="Buscar..." maxlength="100">
+                </div>
+                
+                <div class="publicaciones">
+                    <ul class="entradas-recientes">
+                        <caption>
+                            <h3>
+                                Entradas Recientes:
+                            </h3>
+                        </caption>
+                        <li class="post">Introducción a Internet Information Server 7</li>
+                        <li class="post">Llegó el día. Hoy Webcast de IIS 7</li>
+                        <li class="post">Comming Soon… www.IIS.net!!!</li>
+                        <li class="post">Microsoft.Web.Administration en IIS 7</li>
+                    </ul>
+
+                    <ul class="comentarios-recientes">
+                        <caption>
+                            <h3>
+                                Comentarios Recientes:
+                            </h3>
+                        </caption>
+                        <li class="post">
+                            <p class="contenido-post">
+                                <span class="autor">anonymous</span>
+                                en ¿Qué es FDDI?
+                            </p>      
+                        </li>
+                        <li class="post">
+                            <p class="contenido-post">
+                                <span class="autor">Libardo J</span>
+                                ¿Qué es FDDI?
+                            </p>   
+                        </li>
+                        <li class="post">
+                            <p class="contenido-post">
+                                <span class="autor">anonymous</span>
+                                ¿Qué es FDDI?
+                            </p> 
+                        </li>
+                        <li class="post">
+                            <p class="contenido-post">
+                                <span class="autor">Santiago</span>
+                                10 Preguntas frecuentes de IIS
+                            </p> 
+                        </li>
+                    </ul>
+
+                    <ul class="archivos">
+                        <caption>
+                            <h3>
+                                Archivos:
+                            </h3>
+                        </caption>
+                        <li class="post">diciembre 2006</li>
+                        <li class="post">mayo 2006</li>
+                        <li class="post">octubre 2005</li>
+                        <li class="post">julio 2005</li>
+                    </ul>
+
+                    <ul class="categorias">
+                        <caption>
+                            <h3>
+                                Categorias:
+                            </h3>
+                        </caption>
+                        <li class="post-nothing">No hay categorías</li>
+                    </ul>
+
+                    <ul class="meta">
+                        <caption>
+                            <h3>
+                                Meta:
+                            </h3>
+                        </caption>
+                        <li class="post">RSS de las entradas</li>
+                        <li class="post">RSS de los comentarios</li>
+                        <li class="post">Acceder</li>
+                        <li class="post">WordPress.org</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </main>
+    
+ 
+
+    <script src="js/script.js"></script>
+</body>
+</html>

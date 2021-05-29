@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Template HTML5 by zNareak</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="toggle" id="toggle">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4Z"
+            fill="currentColor"
+          />
+          <path
+            d="M4 9C3.44772 9 3 9.44772 3 10C3 10.5523 3.44772 11 4 11H20C20.5523 11 21 10.5523 21 10C21 9.44772 20.5523 9 20 9H4Z"
+            fill="currentColor"
+          />
+          <path
+            d="M3 14C3 13.4477 3.44772 13 4 13H20C20.5523 13 21 13.4477 21 14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14Z"
+            fill="currentColor"
+          />
+          <path
+            d="M4 17C3.44772 17 3 17.4477 3 18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18C21 17.4477 20.5523 17 20 17H4Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <header>
+        <nav class="nav">
+          <div class="toggle-close" id="toggle-close">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div>
+            <a href="#">Home</a>
+            <a href="#">Library</a>
+            <a href="#">Pricing</a>
+          </div>
+
+          <a href="#" class="nav-icon">
+            <svg
+              width="45"
+              height="45"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M9 1H1V9H9V6H11V20H15V23H23V15H15V18H13V6H15V9H23V1H15V4H9V1ZM21 3H17V7H21V3ZM17 17H21V21H17V17Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+
+          <div>
+            <a href="#">Login</a>
+            <a href="#">Sign up</a>
+          </div>
+        </nav>
+        <h1 class="title">Learn new skills with sololearn</h1>
+        <p class="subtitle">
+          This design I did not do, I was in charge of layout and making the css
+          and responsive, you can find the original author here:
+          <a
+            href="https://dribbble.com/shots/15289811-Online-Course-Hero-header"
+          >
+            <strong>here</strong>
+          </a>
+        </p>
+
+        <button class="button">Get started</button>
+
+        <img
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/185353103113169.5f462e56b71fc.jpg"
+          class="fluid"
+        />
+      </header>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("toggle");
+      const toggle_close = document.getElementById("toggle-close");
+      const nav = document.querySelector(".nav");
+
+      function toggle_nav() {
+        nav.classList.toggle("nav-expanded");
+      }
+
+      toggle.addEventListener("click", toggle_nav);
+      toggle_close.addEventListener("click", toggle_nav);
+    </script>
+  </body>
+</html>

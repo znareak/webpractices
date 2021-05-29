@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Práctica con DOM</title>
+  </head>
+  <body>
+    <div class="container-overlay hide" id="container">
+      <div class="container">
+        <button class="close-container" id="close-container">
+          <i class="fa fa-times"></i>
+        </button>
+        <form id="add_user" autocomplete="off">
+          <header class="header">
+            <div class="logo"></div>
+            <h2 class="title">Agregar usuario</h2>
+            <p class="muted">Todo los campos son requeridos</p>
+          </header>
+          <div class="group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+              autofocus
+            />
+            <span class="error" id="error-email">El correo está en uso</span>
+          </div>
+
+          <div class="group-row">
+            <div class="group">
+              <input
+                type="name"
+                name="name"
+                id="name"
+                placeholder="Name"
+                required
+              />
+            </div>
+            <div class="group">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+
+          <button class="button" type="submit" id="submit">Agregar</button>
+        </form>
+      </div>
+    </div>
+
+    <main class="wrapper">
+      <h1 class="title">Lista de usuarios</h1>
+      <button id="add-user" class="button">Agregar</button>
+      <table class="table" id="table-users">
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Clave</th>
+          <th>Gestionar</th>
+        </tr>
+      </table>
+    </main>
+
+    <script src="./vendors/Notifier.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7d7cc578e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

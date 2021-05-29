@@ -1,0 +1,89 @@
+@mixin position(
+  $translate_x: 0,
+  $translate_y: 0,
+  $rotate_x: 0,
+  $rotate_y: 0,
+  $translate_z: 0
+) {
+  transform: translate($translate_x, $translate_y) rotateX($rotate_x)
+    rotateY($rotate_y) translateZ($translate_z);
+}
+
+@mixin _rotation($coords, $id: 0) {
+  $translate_x: map-get($coords, "translate_x");
+
+  $ty: map-get($coords, "translate_y");
+  $translate_y: if($ty, $ty, 0);
+
+  $tz: map-get($coords, "translate_z");
+  $translate_z: if($tz, $tz, 0);
+
+  animation-name: rotation-#{$id};
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  @keyframes rotation-#{$id} {
+    $i: 0;
+    @while $i <= 100 {
+      #{$i + 0%} {
+        @include position(
+          $translate_x,
+          $translate_y,
+          $i + 10deg,
+          $i + 10deg,
+          $translate_z
+        );
+      }
+      $i: $i + 1;
+    }
+  }
+}
+
+.container {
+  $width: 250;
+  $height: $width;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 600px;
+  perspective: 800px;
+
+  > div {
+    width: $width + 0px;
+    height: $height + 0px;
+    margin: 8px;
+    position: absolute;
+    border: 2px dashed;
+    background-size: cover;
+
+    &:nth-child(1) {
+      $coords: (
+        "translate_x": 0,
+      );
+      z-index: 1;
+      @include _rotation($coords);
+      background-image: url("https://picsum.photos/id/137/#{$width}/#{$height}");
+    }
+
+    &:nth-child(2) {
+      $coords: (
+        "translate_x": 100px,
+      );
+      z-index: 3;
+      @include _rotation($coords, 1);
+      background-image: url("https://picsum.photos/id/47/#{$width}/#{$height}");
+    }
+
+    &:nth-child(3) {
+      $coords: (
+        "translate_x": 50px,
+      );
+      z-index: 2;
+      @include _rotation($coords, 2);
+      background-image: url("https://picsum.photos/id/257/#{$width}/#{$height}");
+    }
+  }
+}

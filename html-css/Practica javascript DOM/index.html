@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -15,15 +21,19 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
     <title>Práctica con DOM</title>
   </head>
   <body>
-    <div class="container-overlay hide" id="container">
+    <div id="app"></div>
+
+    <div class="container-overlay hide">
       <div class="container">
-        <button class="close-container" id="close-container">
+        <button class="close-container">
           <i class="fa fa-times"></i>
         </button>
-        <form id="add_user" autocomplete="off">
+
+        <form class="form" autocomplete="off" id="add-user-form">
           <header class="header">
             <div class="logo"></div>
             <h2 class="title">Agregar usuario</h2>
@@ -67,9 +77,63 @@
       </div>
     </div>
 
+    <div class="container-overlay hide">
+      <div class="container">
+        <button class="close-container">
+          <i class="fa fa-times"></i>
+        </button>
+
+        <form class="form" autocomplete="off" id="edit-user-form">
+          <header class="header">
+            <div class="logo"></div>
+            <h2 class="title">Editar usuario</h2>
+          </header>
+          <div class="group">
+            <input
+              type="email"
+              name="email-edit"
+              id="email-edit"
+              placeholder="Email"
+              required
+              autofocus
+            />
+            <span class="error" id="error-email-edit">El correo está en uso</span>
+          </div>
+
+          <div class="group-row">
+            <div class="group">
+              <input
+                type="name"
+                name="name-edit"
+                id="name-edit"
+                placeholder="Name"
+                required
+              />
+            </div>
+            <div class="group">
+              <input
+                type="password"
+                name="password-edit"
+                id="password-edit"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+
+          <button class="button" type="submit" id="submit-edit">Editar</button>
+        </form>
+      </div>
+    </div>
+
+
     <main class="wrapper">
       <h1 class="title">Lista de usuarios</h1>
       <button id="add-user" class="button">Agregar</button>
+      <div class="buttons">
+        <button class="button secondary">Importar</button
+        ><button class="button success" id="export-button">Exportar</button>
+      </div>
       <table class="table" id="table-users">
         <tr>
           <th>Nombre</th>
@@ -85,6 +149,6 @@
       src="https://kit.fontawesome.com/7d7cc578e0.js"
       crossorigin="anonymous"
     ></script>
-    <script src="app.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
   </body>
 </html>

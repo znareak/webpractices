@@ -3,6 +3,18 @@ $overlay_color: rgba(0, 0, 0, 0.404);
 $input_border: rgba(128, 128, 128, 0.561);
 $white: #fff;
 
+@mixin onfocus($border, $shadow) {
+  border-color: $border;
+  box-shadow: 0 0 0 0.2rem $shadow;
+}
+
+@mixin btn($background, $border, $shadow) {
+  background-color: $background;
+  &:focus {
+    @include onfocus($border, $shadow);
+  }
+}
+
 * {
   font-family: "Ubuntu", sans-serif;
   outline: none;
@@ -40,14 +52,12 @@ input {
 
 input:not(.invalid):focus,
 .button:focus {
-  border-color: #485affe8 !important;
-  box-shadow: 0 0 0 0.2rem #485aff46;
+  @include onfocus(#2439fde8, #485aff46);
 }
 
 input:invalid,
 .invalid {
-  border-color: rgba(255, 0, 0, 0.89) !important;
-  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.164);
+  @include onfocus(rgba(255, 0, 0, 0.89), rgba(255, 0, 0, 0.164));
 }
 
 .button {
@@ -62,28 +72,44 @@ input:invalid,
   transition: all 0.1s ease-in;
   font-weight: bold;
 
+  &.success {
+    @include btn(#1eae98, #0b9b85, #1eae987a);
+  }
+
+  &.secondary {
+    @include btn(#114e60, #007ea5, #114d604f);
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
   &:hover {
-    background-color: #485affe8;
+    opacity: 0.9;
   }
 }
 .button-icon {
   background: transparent;
+  width: 25px;
+  height: 25px;
   border: 0;
-  padding: 0;
+  padding: 4px;
   cursor: pointer;
+  border-radius: 50%;
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(128, 128, 128, 0.336);
+  }
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0.5rem;
 
-  .button-icon:not(:last-child) {
+  .button-icon:not(:last-child),
+  .button:not(:last-child) {
     margin-right: 10px;
   }
 }
@@ -185,7 +211,7 @@ input:invalid,
   color: rgb(138, 138, 138);
 }
 
-#add_user {
+.form {
   .header {
     margin-bottom: 1.8rem;
     .title {
@@ -193,24 +219,23 @@ input:invalid,
     }
   }
 
-  .group {
-    margin-bottom: 1rem;
-    position: relative;
-  }
-
-  .group-row {
-    display: flex;
-
-    > .group {
-      flex: 1 1 100%;
-
-      &:not(:last-child) {
-        margin-right: 1rem;
-      }
-    }
-  }
-
   .button {
     margin-top: 0.8rem;
+  }
+}
+.group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.group-row {
+  display: flex;
+
+  > .group {
+    flex: 1 1 100%;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 }

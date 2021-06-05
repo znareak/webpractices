@@ -29,8 +29,10 @@ function getUserLastId() {
 
 function saveUser(user) {
   const users = getUsers();
+  user.id = getUserLastId();
   users.push(user);
   localStorage.setItem("users", json(users));
+  notifier().notify("success", "User added!");
 }
 
 function saveUsers(users) {
@@ -51,79 +53,71 @@ function findUserById(_id) {
   return users.find((user) => user.id === id);
 }
 
-function editUserByPayload(userToEdit, payload) {
-  const users = getUsers();
-  let newUsers = users.map((user) => {
-    if (
-      user.email === userToEdit.email &&
-      user.password === userToEdit.password
-    ) {
-      return {
-        email: payload.email || user.email,
-        name: payload.name || user.name,
-        password: payload.password || user.password,
-        id: user.id,
-      };
-    }
-    return user;
-  });
-
-  console.log(newUsers);
-  saveUsers(newUsers);
-}
-
 function existsEmail(email) {
   const users = getUsers();
   return users.some((user) => user.email === email);
 }
 
-function toggleModal(container) {
-  container.classList.toggle("hide");
-  container.querySelector("span.error").classList.remove("show");
-  container.querySelector("input[type='email']").classList.remove("invalid");
-  container.querySelector("button[type='submit']").disabled = false;
+function toggleVisibility(modal) {
+  modal.classList.toggle("hide");
 }
 
-function addRowInTable(user, tableUsers) {
-  const tr = document.createElement("tr");
-  const tpl = `
-          <td>${user.name}</td>
-          <td>${user.email}</td>
-          <td>${user.password}</td>
-          <td>
-              <div class="buttons">
-                <button class="button-icon" data-delete-id="${user.id}">
-                  <i class="fa fa-trash"></i>
-                </button>
-                
-                <button class="button-icon" data-edit-id="${user.id}">
-                  <i class="fa fa-user-edit"></i>
-                </button>
-              </div>
-          </td>
-        `;
-  tr.id = user.id;
-  tr.innerHTML = tpl;
-  tableUsers.appendChild(tr);
+function toggleModal(trigger, modal) {
+  trigger.addEventListener("click", () => toggleVisibility(modal));
 }
 
-function loadUsersInTable(tableUsers) {
+function element(nodeName, text = "", props = [], jsProps = []) {
+  const node = document.createElement(nodeName);
+  for (const [p, v] of Object.entries(props)) node.setAttribute(p, v);
+  for (const [p, v] of Object.entries(jsProps)) node[p] = v;
+  if (text) node.innerHTML = text;
+  return node;
+}
+
+function addRowInTable({ user, tableUsers, containerEdit }) {
+  const row = element("tr", null, { id: user.id });
+  row.appendChild(element("td", user.name));
+  row.appendChild(element("td", user.email));
+  row.appendChild(element("td", user.password));
+
+  const cellButtons = element("td");
+  const divButtons = element("div", null, { class: "buttons" });
+
+  // --- CRUD buttons ----
+  const deleteButton = element("button", '<i class="fa fa-trash"></i>', {
+    class: "button-icon",
+    "data-delete-id": user.id,
+  });
+
+  deleteButton.addEventListener("click", () => {
+    deleteUserById(user.id);
+    window.location.reload();
+  });
+
+  const editButton = element("button", '<i class="fa fa-user-edit"></i>', {
+    class: "button-icon",
+    "data-edit-id": user.id,
+  });
+
+  editButton.addEventListener("click", () => {
+    toggleVisibility(containerEdit);
+    containerEdit.querySelector("#name-edit").value = user.name;
+    containerEdit.querySelector("#email-edit").value = user.email;
+    containerEdit.querySelector("#password-edit").value = user.password;
+  });
+  divButtons.append(deleteButton, editButton);
+  // ---------------------
+
+  cellButtons.appendChild(divButtons);
+  row.appendChild(cellButtons);
+  tableUsers.appendChild(row);
+}
+
+function loadUsersInTable(tableUsers, containerEdit) {
   const users = getUsers();
   users.forEach((user) => {
-    addRowInTable(user, tableUsers);
+    addRowInTable({ user, tableUsers, containerEdit });
   });
-}
-
-function setToggleModalEvent(trigger, modalContainer) {
-  trigger.addEventListener("click", () => toggleModal(modalContainer));
-}
-
-function setTogglerModal(buttons, containers) {
-  for (let i = 0; i < containers.length; i++) {
-    const container = containers[i];
-    const btnClose = buttons[i];
-    setToggleModalEvent(btnClose, container);
-  }
 }
 
 function checkEmail(payload, isModeEdit = false) {
@@ -149,21 +143,11 @@ function checkEmail(payload, isModeEdit = false) {
 }
 
 export {
-  json,
-  getUsers,
-  saveUser,
-  getUserLastId,
-  deleteUserById,
-  findUserById,
-  notifier,
-  existsEmail,
-  editUserByPayload,
   getId,
   selector,
+  toggleVisibility,
   toggleModal,
-  addRowInTable,
   loadUsersInTable,
-  setToggleModalEvent,
-  setTogglerModal,
-  checkEmail,
+  addRowInTable,
+  saveUser,
 };

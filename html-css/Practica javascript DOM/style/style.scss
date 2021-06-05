@@ -16,23 +16,11 @@ $white: #fff;
 }
 
 * {
-  font-family: "Ubuntu", sans-serif;
-  outline: none;
-}
-
-*,
-*::before,
-*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  line-height: normal;
-}
-
-*::before,
-*::after {
-  display: table;
-  clear: both;
+  font-family: "Ubuntu", sans-serif;
+  outline: none;
 }
 
 body {
@@ -159,8 +147,9 @@ input:invalid,
     }
   }
 }
+
 .wrapper {
-  max-width: 550px;
+  max-width: 850px;
   margin: auto;
   margin-top: 8rem;
 }

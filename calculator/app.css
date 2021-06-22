@@ -1,170 +1,172 @@
-@font-face{
-    src: url("./Quicksand.ttf");
-    font-family: "Quicksand";
-    line-height: normal;
+@font-face {
+  src: url("./Quicksand.ttf");
+  font-family: "Quicksand";
+  line-height: normal;
 }
 
-*{
-    font-family: "Quicksand" !important;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    text-decoration: none ;
-    box-sizing: border-box !important;
-    -webkit-text-rendering: optimizeSpeed;
-    -moz-text-rendering: optimizeSpeed;
-    -o-text-rendering: optimizeSpeed;
-    text-rendering: optimizeSpeed;
+* {
+  font-family: "Quicksand" !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box !important;
+  -webkit-text-rendering: optimizeSpeed;
+  -moz-text-rendering: optimizeSpeed;
+  -o-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
 }
 
-body{
-    font-size: 18px;
+body {
+  font-size: 18px;
+  width: 100%;
+  background: #27496d;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.teclado-numero {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+
+.funciones-especiales {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.calculadora {
+  background-color: #0c1c3b;
+  margin-top: 20px;
+  width: 425px;
+  height: auto;
+  max-width: 1000px;
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.322);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.calculadora #operaciones {
+  color: #fff;
+  font-size: 18px;
+  padding-top: 114px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: right;
+  width: 100%;
+  background-color: #0c1c3b;
+  resize: none;
+  display: block;
+  height: 150px;
+  word-break: break-all;
+}
+
+.calculadora #operaciones::-webkit-scrollbar {
+  background: transparent;
+}
+
+.calculadora #operaciones::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 8px;
+  width: 20px;
+}
+
+.calculadora #operaciones::-ms-scrollbar {
+  background: transparent;
+}
+
+.calculadora #operaciones::-ms-scrollbar-thumb {
+  background: #fff;
+  border-radius: 8px;
+  width: 20px;
+}
+
+.calculadora #operaciones::-o-scrollbar {
+  background: transparent;
+}
+
+.calculadora #operaciones::-o-scrollbar-thumb {
+  background: #fff;
+  border-radius: 8px;
+  width: 20px;
+}
+
+.calculadora #resultado {
+  margin-top: 20px;
+  color: #fff;
+  display: block;
+  height: 30px;
+  letter-spacing: 2px;
+}
+
+.calculadora .botones {
+  width: 100%;
+  margin: auto;
+}
+
+.filas {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 3px;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.filas button {
+  transition: background-color 0.3s ease;
+}
+
+.filas button:hover {
+  background-color: #0c1c3b;
+}
+
+.numero {
+  color: #f8615a;
+}
+
+.error {
+  color: #feb72b;
+}
+
+.clear {
+  background-color: #feb72b !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.boton {
+  background-color: #243d6e42;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  letter-spacing: 1px;
+  outline: none;
+  padding: 25px 0;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  * {
+    font-size: 12px !important;
+  }
+
+  .calculadora {
+    margin-top: 0;
     width: 100%;
-    background: #27496d;
-    color: #fff;
-    transition: background-color .3s ease;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
+  }
 
-.teclado-numero{
-    grid-template-columns: repeat(5, 1fr) !important;
-}
-
-.funciones-especiales{
+  .teclado-normal {
     grid-template-columns: repeat(3, 1fr) !important;
-}
+  }
 
-.calculadora{
-    background-color: #0c1c3b;
-    margin-top: 20px;
-    width: 425px;
-    height: auto;
-    max-width: 1000px;
-    box-shadow: 0 1px 9px rgba(0, 0, 0, 0.322);
-    padding: 15px;
-}
+  .teclado-numero {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 
-.calculadora #operaciones{
-    color: #fff;
-    font-size: 18px;
-    padding-top: 114px;
-    padding-right: 10px;
-    padding-left: 10px;
-    text-align: right;
-    width: 100%;
-    background-color: #0c1c3b;
-    resize: none;
-    display: block;
-    height: 150px;
-    word-break: break-all;
-}
-
-.calculadora #operaciones::-webkit-scrollbar{
-    background: transparent;
-}
-
-.calculadora #operaciones::-webkit-scrollbar-thumb{
-    background: #fff;
-    border-radius: 8px;
-    width: 20px;
-}
-
-.calculadora #operaciones::-ms-scrollbar{
-    background: transparent;
-}
-
-.calculadora #operaciones::-ms-scrollbar-thumb{
-    background: #fff;
-    border-radius: 8px;
-    width: 20px;
-}
-
-.calculadora #operaciones::-o-scrollbar{
-    background: transparent;
-}
-
-.calculadora #operaciones::-o-scrollbar-thumb{
-    background: #fff;
-    border-radius: 8px;
-    width: 20px;
-}
-
-.calculadora #resultado{
-    margin-top: 20px;
-    color: #fff;
-    display: block;
-    height: 30px;
-    letter-spacing: 2px;
-}
-
-.calculadora .botones{
-    width: 100%;
-    margin: auto;
-}
-
-.filas{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 3px;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-
-.filas button{
-    transition: background-color .3s ease;
-}
-
-.filas button:hover{
-   background-color: #0c1c3b;
-}
-
-.numero{
-    color: #f8615a;
-}
-
-.error{
-    color: #feb72b;
-}
-
-.clear{
-    background-color: #feb72b !important;
-    color: #000 !important;
-    font-weight: bold;
-}
-
-.boton{
-    background-color: #243d6e42;
-    color: #fff;
-    cursor: pointer;
-    display: block;
-    letter-spacing: 1px;
-    outline: none;
-    padding: 25px 0;
-}
-
-@media screen and (max-width: 500px){
-    *{
-        font-size: 12px !important;
-    }
-
-    .calculadora{
-        margin-top: 0;
-        width: 100%;
-    }
-    
-    .teclado-normal{
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
-    .teclado-numero{
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
-    #operaciones{
-        font-size: 20px !important;
-    }
+  #operaciones {
+    font-size: 20px !important;
+  }
 }

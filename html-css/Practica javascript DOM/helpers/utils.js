@@ -15,6 +15,10 @@ function json(obj) {
   return JSON.stringify(obj);
 }
 
+function reload() {
+  window.location.reload();
+}
+
 function getUsers() {
   const users = localStorage.getItem("users");
   if (!users) return [];
@@ -91,7 +95,7 @@ function addRowInTable({ user, tableUsers, containerEdit }) {
 
   deleteButton.addEventListener("click", () => {
     deleteUserById(user.id);
-    window.location.reload();
+    reload();
   });
 
   const editButton = element("button", '<i class="fa fa-user-edit"></i>', {
@@ -143,6 +147,7 @@ function checkEmail(payload, isModeEdit = false) {
 }
 
 export {
+  reload,
   getId,
   selector,
   toggleVisibility,

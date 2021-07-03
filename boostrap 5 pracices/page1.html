@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lading Page example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #eee;
+      }
+
+      * {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .title {
+        font-family: "Dela Gothic One", cursive;
+        letter-spacing: 1px;
+      }
+
+      .header-figure {
+        border-radius: 10px;
+        top: 3rem;
+      }
+
+      .header-wave {
+        z-index: -1;
+        top: 0;
+        left: 0;
+      }
+
+      .section-image {
+        border-radius: 30px;
+        transform: skew(4deg);
+      }
+
+      .section-image-rect {
+        position: absolute;
+        width: 108%;
+        height: 105%;
+        background: #185adb;
+        z-index: -1;
+        top: -1rem;
+        left: -1rem;
+        border-radius: 3rem;
+        transform: rotate(-10deg) translateX(-1rem);
+      }
+
+      .blob {
+        position: absolute;
+        background-repeat: no-repeat;
+        z-index: -1;
+      }
+
+      .blob:nth-child(1) {
+        background-image: url(./images/blob.svg);
+        top: 48rem;
+        width: 40rem;
+        height: 28rem;
+      }
+      .blob:nth-child(2) {
+        background-image: url(./images/blob2.svg);
+        top: 62rem;
+        right: 2rem;
+        width: 45rem;
+        height: 32rem;
+      }
+    </style>
+  </head>
+
+  <main class="container mb-5">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <header class="vh-100 text-white">
+      <img
+        src="./images/wave-header.svg"
+        alt="wave header"
+        class="position-absolute w-100 header-wave"
+      />
+      <nav class="navbar navbar-expand-lg bg-transparent mt-4">
+        <div class="container-fluid">
+          <a class="navbar-brand text-reset fw-bold title" href="#">O.studio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Web menu page"
+          >
+            <span
+              class="
+                navbar-toggler-icon
+                d-flex
+                justify-content-center
+                align-items-center
+              "
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu">
+            <ul
+              class="navbar-nav justify-content-center w-100 align-items-center"
+            >
+              <li class="nav-item d-flex ms-auto">
+                <a class="nav-link text-white" aria-current="page" href="#"
+                  >About</a
+                >
+                <a class="nav-link text-white" href="#">Services</a>
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+
+              <li class="nav-item ms-auto">
+                <a class="btn bg-white rounded-pill px-4" href="#"
+                  >Get Started</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="col-6">
+          <h1 class="title" style="margin-top: 10rem">
+            We are greatest web & problems solution company
+          </h1>
+          <button class="btn btn-lg bg-white mt-5 rounded-0 px-5 py-3">
+            Contact us!
+          </button>
+        </div>
+        <div class="col-6 position-relative">
+          <img
+            src="./images/header.svg"
+            alt="We are the greatest programmers"
+            class="img-fluid w-100 position-absolute header-figure"
+          />
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid" style="margin-top: 8rem">
+      <div class="row">
+        <div class="col-md-12 col-lg-6 position-relative">
+          <img
+            src="./images/img1.jpg"
+            alt="We are a awesome company"
+            class="img-fluid section-image"
+          />
+
+          <div class="section-image-rect"></div>
+        </div>
+
+        <div
+          class="
+            ps-5
+            col-md-12 col-lg-6
+            d-flex
+            flex-column
+            justify-content-center
+          "
+        >
+          <div class="ps-4">
+            <h2 class="fw-bold">It is a long established fact that a reader</h2>
+            <p class="lead mt-3 text-muted">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
+              fugit. Fugit, sequisit, amet consectetur adipisicing elit.
+              Nostrum, fugit. Fugit, sequi?
+            </p>
+            <button
+              class="btn btn-success btn-lg w-auto mt-3 rounded-0 py-3 px-5"
+            >
+              About us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 20rem">
+      <div class="row">
+        <div class="col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-6">
+              <div
+                class="
+                  bg-white
+                  border
+                  shadow-lg
+                  p-5
+                  mb-5
+                  text-center
+                  w-100
+                  rounded
+                "
+              >
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11 17H4C2.34315 17 1 15.6569 1 14V6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V14C23 15.6569 21.6569 17 20 17H13V19H16C16.5523 19 17 19.4477 17 20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19H11V17ZM4 5H20C20.5523 5 21 5.44772 21 6V14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14V6C3 5.44772 3.44772 5 4 5Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <h4 class="mt-4">Web Design</h4>
+                <p class="text-muted">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestias voluptatibus numquam nisi!
+                </p>
+              </div>
+
+              <div
+                class="
+                  bg-white
+                  border
+                  shadow-lg
+                  p-5
+                  mb-5
+                  text-center
+                  w-100
+                  rounded
+                "
+              >
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11 17H4C2.34315 17 1 15.6569 1 14V6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V14C23 15.6569 21.6569 17 20 17H13V19H16C16.5523 19 17 19.4477 17 20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19H11V17ZM4 5H20C20.5523 5 21 5.44772 21 6V14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14V6C3 5.44772 3.44772 5 4 5Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <h4 class="mt-4">Web Design</h4>
+                <p class="text-muted">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestias voluptatibus numquam nisi!
+                </p>
+              </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+              <div
+                class="
+                  bg-white
+                  border
+                  shadow-lg
+                  p-5
+                  mb-5
+                  text-center
+                  w-100
+                  rounded
+                "
+              >
+                <svg
+                  width="54"
+                  height="54"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11 17H4C2.34315 17 1 15.6569 1 14V6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V14C23 15.6569 21.6569 17 20 17H13V19H16C16.5523 19 17 19.4477 17 20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19H11V17ZM4 5H20C20.5523 5 21 5.44772 21 6V14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14V6C3 5.44772 3.44772 5 4 5Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <h4 class="mt-4">Web Design</h4>
+                <p class="text-muted">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestias voluptatibus numquam nisi!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="
+            col-md-12 col-lg-6
+            d-flex
+            flex-column
+            justify-content-center
+            ps-5
+          "
+        >
+          <h2 class="fw-bold">Our Best Service</h2>
+          <p class="lead mt-3 text-muted">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
+            fugit. Fugit, sequisit, amet consectetur adipisicing elit. Nostrum,
+            fugit. Fugit, sequi?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 15rem">
+      <div class="row">
+        <div class="d-flex flex-column justify-content-center col-lg-6">
+          <h2 class="fw-bold mb-4 text-center">Our Best Service</h2>
+          <p class="text-center lead text-muted">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia
+            perferendis ex perspiciatis tenetur voluptates, velit veniam iusto
+            deleniti dignissimos aliquid perspiciatis tenetur voluptates, velit
+            veniam iusto deleniti dignissimos aliquid.
+          </p>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <img src="./images/people.png" alt="People of us" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </main>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

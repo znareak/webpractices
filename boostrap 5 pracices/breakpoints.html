@@ -41,9 +41,22 @@
       justify-content: center;
       align-items: center;
     }
+
+    .box-fill {
+      width: 90px;
+    }
   </style>
   <body>
-    <div class="container mb-5">
+
+      <nav class="position-sticky top-0">
+        <ul class="d-flex list-unstyled p-4 bg-light">
+          <li class="p-2"><a href="" class="text-reset text-decoration-none">Home</a></li>
+          <li class="p-2"><a href="" class="text-reset text-decoration-none">About -us</a> </li>
+          <li class="p-2"><a href="" class="text-reset text-decoration-none">Contact</a></li>
+          <li class="p-2"><a href="" class="text-reset text-decoration-none">Downloads</a></li>
+        </ul>
+      </nav>
+    <div class="container-fluid mb-5">
       <h3
         class="
           text-center text-success
@@ -89,9 +102,7 @@
 
       <div class="row row-cols-2">
         <div class="col">
-          <h5 class="text-center fw-bold">
-            Margenes y displays
-          </h5>
+          <h5 class="text-center fw-bold">Margenes y displays</h5>
           <div class="d-flex d-sm-grid d-md-block container my-4 testing-1">
             <div class="me-1 mb-0 mb-md-2 box">1</div>
             <div class="me-1 mb-0 mb-md-2 box">2</div>
@@ -101,6 +112,16 @@
             <div class="me-1 mb-0 mb-md-2 box">6</div>
             <div class="me-1 mb-0 mb-md-2 box">7</div>
             <div class="me-1 mb-0 mb-md-2 box">8</div>
+          </div>
+
+          <div class="position-relative shadow-lg" style="height: 500px;">
+            <div class="box box-fill position-absolute top-0">1</div>
+            <div class="box box-fill position-absolute end-0">2</div>
+
+            <div class="box box-fill position-absolute bottom-0 start-0">3</div>
+            <div class="box box-fill position-absolute bottom-0 end-0">4</div>
+
+            <div class="box box-fill position-absolute top-50 start-50 translate-middle">Center</div>
           </div>
         </div>
 
@@ -120,6 +141,45 @@
             <div class="col-12 col-md-6 col-lg-4 box"></div>
             <div class="col-12 col-md-6 col-lg-4 box"></div>
             <div class="col-12 col-md-6 col-lg-4 box"></div>
+          </div>
+
+          <div
+            class="
+              mt-5
+              d-flex                                  
+              flex-xl-column  align-items-xl-center   justify-content-xl-center
+              flex-lg-row     align-items-lg-center   justify-content-lg-between
+              flex-md-column  align-items-md-center   justify-content-md-around
+              flex-sm-row     align-items-sm-start    justify-content-sm-start
+              flex-column     align-items-center      justify-content-end
+
+              border
+              rounded-3
+            "
+            style="height: 500px"
+          >
+            <div class="box box-fill align-self-xl-end">1</div>
+            <div class="box box-fill align-self-md-start align-self-lg-auto">2</div>
+            <div class="box box-fill">3</div>
+            <div class="box box-fill align-self-xl-end">4</div>
+          </div>
+
+
+          <div class="
+          d-flex 
+          flex-sm-column
+          flex-md-row
+
+          my-5 border 
+          rounded-3 
+          shadow-lg" 
+          style="height: 500px;">
+            <div class="box box-fill align-self-end">Box 1</div>
+            <div class="box box-fill">Box 2</div>
+            <div class="box box-fill">Box 3</div>
+            <div class="box box-fill">Box 4</div>
+            <div class="box box-fill">Box 5</div>
+            <div class="box box-fill">Box 6</div>
           </div>
         </div>
       </div>

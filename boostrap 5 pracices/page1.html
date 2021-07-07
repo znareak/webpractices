@@ -21,9 +21,12 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <style>
       body {
         background: #eee;
+        overflow-x: hidden;
       }
 
       * {
@@ -33,6 +36,10 @@
       .title {
         font-family: "Dela Gothic One", cursive;
         letter-spacing: 1px;
+      }
+
+      .title-header {
+        margin-top: 10rem;
       }
 
       .header-figure {
@@ -63,6 +70,12 @@
         transform: rotate(-10deg) translateX(-1rem);
       }
 
+      .bg-services {
+        width: 100%;
+        left: 0;
+        top: 118rem;
+      }
+
       .blob {
         position: absolute;
         background-repeat: no-repeat;
@@ -75,6 +88,7 @@
         width: 40rem;
         height: 28rem;
       }
+
       .blob:nth-child(2) {
         background-image: url(./images/blob2.svg);
         top: 62rem;
@@ -82,19 +96,71 @@
         width: 45rem;
         height: 32rem;
       }
+
+      .user-feedback {
+        background: url("./images/section-image-2.svg");
+        background-size: cover;
+        border-radius: 10px;
+      }
+
+      .footer {
+        background-image: url("./images/footer_bg.svg");
+        background-size: cover;
+        background-position: 0px 35rem;
+        height: 480px;
+      }
+
+      .header-feactures {
+        top: 6rem;
+      }
+
+      .header-feactures .feacture-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .header-feactures .feacture-card img {
+        max-width: 200px;
+      }
+
+      @media screen and (max-width: 992px) {
+        .title-header {
+          margin-top: 2rem;
+        }
+
+        .header-wave {
+          width: 1000px !important;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+
+      }
     </style>
   </head>
 
-  <main class="container mb-5">
+  <main class="container" style="margin-bottom: 3rem">
     <div class="blob"></div>
     <div class="blob"></div>
+    <img
+      src="./images/blob-bg-service.svg"
+      class="position-absolute bg-services"
+      style="z-index: -1"
+    />
+
     <header class="vh-100 text-white">
       <img
         src="./images/wave-header.svg"
         alt="wave header"
         class="position-absolute w-100 header-wave"
       />
-      <nav class="navbar navbar-expand-lg bg-transparent mt-4">
+      <nav
+        class="navbar navbar-expand-lg bg-transparent mt-4"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <div class="container-fluid">
           <a class="navbar-brand text-reset fw-bold title" href="#">O.studio</a>
           <button
@@ -158,15 +224,24 @@
       </nav>
 
       <div class="row">
-        <div class="col-6">
-          <h1 class="title" style="margin-top: 10rem">
+        <div
+          class="col-12 col-lg-6"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <h1 class="title title-header">
             We are greatest web & problems solution company
           </h1>
           <button class="btn btn-lg bg-white mt-5 rounded-0 px-5 py-3">
             Contact us!
           </button>
         </div>
-        <div class="col-6 position-relative">
+
+        <div
+          class="col-6 d-none d-lg-block position-relative"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <img
             src="./images/header.svg"
             alt="We are the greatest programmers"
@@ -174,11 +249,83 @@
           />
         </div>
       </div>
+
+      <div class="position-relative header-feactures">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+            <div
+              class="
+                bg-white
+                shadow-lg
+                p-4
+                rounded
+                text-dark text-center
+                feacture-card
+                h-100
+              "
+            >
+              <img src="./images/software_update.svg" class="w-100" />
+              <h4 class="mt-3">Update Software</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Doloribus, cupiditate!
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+            <div
+              class="
+                bg-white
+                shadow-lg
+                p-4
+                rounded
+                text-dark text-center
+                feacture-card
+                h-100
+              "
+            >
+              <img src="./images/open_source.svg" class="w-100" />
+              <h4 class="mt-3">Open Source</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Doloribus, cupiditate!
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-4 mb-3">
+            <div
+              class="
+                bg-white
+                shadow-lg
+                p-4
+                rounded
+                text-dark text-center
+                feacture-card
+                h-100
+              "
+            >
+              <img src="./images/helper_people.svg" class="w-100" />
+              <h4 class="mt-3">Helper People</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Doloribus, cupiditate!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <div class="container-fluid" style="margin-top: 8rem">
+    <div
+      class="container-fluid"
+      style="margin-top: 20rem"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div class="row">
-        <div class="col-md-12 col-lg-6 position-relative">
+        <div class="d-none col-lg-6 d-lg-block position-relative">
           <img
             src="./images/img1.jpg"
             alt="We are a awesome company"
@@ -199,7 +346,7 @@
         >
           <div class="ps-4">
             <h2 class="fw-bold">It is a long established fact that a reader</h2>
-            <p class="lead mt-3 text-muted">
+            <p class="lead mt-3">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
               fugit. Fugit, sequisit, amet consectetur adipisicing elit.
               Nostrum, fugit. Fugit, sequi?
@@ -214,11 +361,16 @@
       </div>
     </div>
 
-    <div class="container-fluid" style="margin-top: 20rem">
+    <div
+      class="container-fluid"
+      style="margin-top: 25rem"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div class="row">
         <div class="col-md-12 col-lg-6">
           <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
               <div
                 class="
                   bg-white
@@ -230,21 +382,26 @@
                   w-100
                   rounded
                 "
+                data-aos="fade-up"
+                data-aos-delay="500"
               >
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11 17H4C2.34315 17 1 15.6569 1 14V6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V14C23 15.6569 21.6569 17 20 17H13V19H16C16.5523 19 17 19.4477 17 20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19H11V17ZM4 5H20C20.5523 5 21 5.44772 21 6V14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14V6C3 5.44772 3.44772 5 4 5Z"
-                    fill="currentColor"
-                  />
-                </svg>
+                <div class="d-inline-block bg-light p-3 rounded-circle">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11 17H4C2.34315 17 1 15.6569 1 14V6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V14C23 15.6569 21.6569 17 20 17H13V19H16C16.5523 19 17 19.4477 17 20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19H11V17ZM4 5H20C20.5523 5 21 5.44772 21 6V14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14V6C3 5.44772 3.44772 5 4 5Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+
                 <h4 class="mt-4">Web Design</h4>
                 <p class="text-muted">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -263,21 +420,26 @@
                   w-100
                   rounded
                 "
+                data-aos="fade-up"
+                data-aos-delay="600"
               >
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11 17H4C2.34315 17 1 15.6569 1 14V6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V14C23 15.6569 21.6569 17 20 17H13V19H16C16.5523 19 17 19.4477 17 20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19H11V17ZM4 5H20C20.5523 5 21 5.44772 21 6V14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14V6C3 5.44772 3.44772 5 4 5Z"
-                    fill="currentColor"
-                  />
-                </svg>
+                <div class="d-inline-block bg-light p-3 rounded-circle">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9 1H1V9H9V6H11V20H15V23H23V15H15V18H13V6H15V9H23V1H15V4H9V1ZM21 3H17V7H21V3ZM17 17H21V21H17V17Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+
                 <h4 class="mt-4">Web Design</h4>
                 <p class="text-muted">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -285,7 +447,15 @@
                 </p>
               </div>
             </div>
-            <div class="col-6 d-flex justify-content-center align-items-center">
+
+            <div
+              class="
+                col-12 col-lg-6
+                d-flex
+                justify-content-center
+                align-items-center
+              "
+            >
               <div
                 class="
                   bg-white
@@ -297,21 +467,36 @@
                   w-100
                   rounded
                 "
+                data-aos="fade-up"
+                data-aos-delay="1000"
               >
-                <svg
-                  width="54"
-                  height="54"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11 17H4C2.34315 17 1 15.6569 1 14V6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V14C23 15.6569 21.6569 17 20 17H13V19H16C16.5523 19 17 19.4477 17 20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19H11V17ZM4 5H20C20.5523 5 21 5.44772 21 6V14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14V6C3 5.44772 3.44772 5 4 5Z"
-                    fill="currentColor"
-                  />
-                </svg>
+                <div class="d-inline-block bg-light p-3 rounded-circle">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 6H4V8H2V6C2 4.89543 2.89543 4 4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H15V18H20V6Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M2 13C5.86599 13 9 16.134 9 20H7C7 17.2386 4.76142 15 2 15V13Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M2 17C3.65685 17 5 18.3431 5 20H2V17Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M2 9C8.07513 9 13 13.9249 13 20H11C11 15.0294 6.97056 11 2 11V9Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+
                 <h4 class="mt-4">Web Design</h4>
                 <p class="text-muted">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -332,7 +517,7 @@
           "
         >
           <h2 class="fw-bold">Our Best Service</h2>
-          <p class="lead mt-3 text-muted">
+          <p class="lead mt-3">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
             fugit. Fugit, sequisit, amet consectetur adipisicing elit. Nostrum,
             fugit. Fugit, sequi?
@@ -341,23 +526,104 @@
       </div>
     </div>
 
-    <div class="container-fluid" style="margin-top: 15rem">
-      <div class="row">
-        <div class="d-flex flex-column justify-content-center col-lg-6">
-          <h2 class="fw-bold mb-4 text-center">Our Best Service</h2>
-          <p class="text-center lead text-muted">
+    <div
+      class="container-fluid user-feedback p-3"
+      style="margin-top: 15rem"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
+      <div class="row py-2">
+        <div
+          class="d-flex flex-column justify-content-center col-lg-6 text-center"
+        >
+          <h2 class="fw-bold mb-4 text-white">User feeback</h2>
+          <p class="lead text-white">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia
             perferendis ex perspiciatis tenetur voluptates, velit veniam iusto
             deleniti dignissimos aliquid perspiciatis tenetur voluptates, velit
             veniam iusto deleniti dignissimos aliquid.
           </p>
+          <h5
+            class="mt-3 border-bottom border-4 pb-2 text-white mx-auto"
+            style="max-width: 150px"
+          >
+            Surja Den Razz
+          </h5>
         </div>
-        <div class="col-md-12 col-lg-6">
+
+        <div class="d-none d-lg-block col-lg-6">
           <img src="./images/people.png" alt="People of us" class="img-fluid" />
         </div>
       </div>
     </div>
   </main>
+
+  <footer
+    class="container-fluid footer text-white"
+    style="margin-top: 10rem"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    <div class="row" style="padding-top: 11rem">
+      <div class="col-lg-6">
+        <form class="w-75 mx-auto">
+          <h6 class="mb-3 fw-bold">Contact us</h6>
+          <input
+            type="text"
+            class="form-control border-0 shadow mb-4 py-1"
+            placeholder="Name"
+          />
+          <input
+            type="email"
+            class="form-control border-0 shadow mb-4 py-1"
+            placeholder="E-mail"
+          />
+          <textarea
+            class="form-control border-0 shadow mb-3"
+            placeholder="Message"
+            cols="30"
+            rows="3"
+          ></textarea>
+          <button type="submit" class="btn btn-success rounded-0 px-5 py-1">
+            Enviar
+          </button>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-lg-4">
+            <h6 class="mb-3 fw-bold">Company</h6>
+            <ul class="list-unstyled">
+              <li class="mb-1">About us</li>
+              <li class="mb-1">Service</li>
+              <li class="mb-1">Contact</li>
+              <li class="mb-1">Popular</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3">
+            <h6 class="mb-3 fw-bold">Explore</h6>
+            <ul class="list-unstyled">
+              <li class="mb-1">Privacy</li>
+              <li class="mb-1">Policy</li>
+              <li class="mb-1">Faq</li>
+              <li class="mb-1">Termns</li>
+            </ul>
+          </div>
+
+          <div class="col-12 mt-4">
+            <h6 class="mb-3 fw-bold">Síguemos</h6>
+            <i class="fa fa-facebook-f me-3"></i>
+            <i class="fa fa-instagram me-3"></i>
+            <i class="fa fa-twitter me-3"></i>
+            <i class="fa fa-google me-3"></i>
+            <i class="fa fa-pinterest-p me-3"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <body>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -369,5 +635,15 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/7d7cc578e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,16 @@
+{
+  "name": "flat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "flat-array.libardo.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^9.1.0"
+  },
+  "scripts": {
+    "test": "npx mocha ./__tests__"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

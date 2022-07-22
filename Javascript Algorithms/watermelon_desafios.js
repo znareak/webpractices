@@ -55,3 +55,14 @@ l = ()=>{
 
 /*console.log(l(5,"cheese milk watermelon carrots potatoes",4))
 console.log(l(3,"corn chocolate gum",1))*/
+
+// contar los numeros de n a m sin tener en cuenta aquellos numeros (ya sean de 3, 4... cifras)  que tengan digitos iguales adyacentes
+t = (n, m, c=0) =>{
+  while(n<=m){
+   p=[...n+''].map(_=>+_),b=1
+    for(k=0; k<p.length-1 && b; k++) 
+    if (p[k]==p[k+1]) b=0
+    b && c++, n++
+  }  
+  return c;
+}

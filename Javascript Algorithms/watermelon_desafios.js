@@ -66,3 +66,51 @@ t = (n, m, c=0) =>{
   }  
   return c;
 }
+
+/*
+
+Fran esta obsesionado con el ordenado de números, pero él no sabe programar. Entonces, le pide a ustedes realizar un código que reciba n números, y sumes los k valores más grandes.
+
+Input 📥 
+La primera línea contendrá 2 enteros n (1 ≤ n ≤ 10000) y k (1 ≤ k ≤ n).
+La segunda línea contiene n números separados por un espacio, estos números pueden ser entre 1 y 10000.
+
+Output 📤 
+Se debe mostrar por pantalla la suma total de los k elementos más grandes
+*/
+u = ($=_=>prompt('').split(' ').map(_=>+_), [n, m] = $())=> $().sort((a,b) =>a-b).slice(-m).reduce((a,b)=>a+b)
+u = (p1,p2,$=_=>_.split(' ').map(_=>+_), [n, m] = $(p1))=> $(p2).sort((a,b) =>a-b).slice(-m).reduce((a,b)=>a+b)
+
+/*
+A Andrea le encantan los arreglos bidimensionales, y ha inventado un juego para jugar con sus amigas, en esté se tendrá que identificar si una grilla es perfecta, ¿Cuándo una grilla es perfecta? Cuando tiene números 1 cruzando la matriz diagonalmente hacia un lado o otro.
+Se sabe que la matriz siempre será de un largo y alto impar
+*/
+/*p = ()=>{
+  size = +prompt(), i=k=0;
+  arr = Array(size).fill([]).map(_=> {
+    sub= prompt().split(' ').map(_ => +_)
+    return sub
+  })
+
+
+  while(i<size && !arr[0][size-1]){
+    if(!arr[i][k]) return "NO"
+    i++, k++; 
+  }
+
+  i =0, k = size-1;
+  while(k>=0 && !arr[0][0]){
+    if(!arr[i][k]) return "NO"
+    i++, k--; 
+  }
+
+  return "YES"
+}*/
+
+p = (size = +prompt(),i=0,k=0)=>{
+  arr = Array(size).fill([]).map(_=> prompt().split(' ').map($ => +$))
+  while(i<size && !arr[0][size-1]) if(!arr[i++][k++]) return "NO" 
+  i =0, k = size-1;
+  while(k>=0 && !arr[0][0]) if(!arr[i++][k--]) return "NO"
+  return "YES"
+}

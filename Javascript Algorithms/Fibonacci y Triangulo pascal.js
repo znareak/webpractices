@@ -67,3 +67,28 @@ function mostrar(){
     document.body.innerHTML += htmlTemplate;
 }
 mostrar();
+
+
+
+// triangulo de pascal usando formula matematica
+const fact2 = (n) => {
+  let res = BigInt(1);
+  for (let i = 2; i <= n; i++) res *= BigInt(i);
+  return res;
+};
+
+const fact = (n) => (n <= 1 ? n : n * fact(n - 1));
+/*formula para obtener el numero en la posicion m en la fila n
+  n!/n!*(n-m)!
+*/
+const E = (n, m) => fact(n) / (fact(m) * fact(n - m)); 
+let filas = 15;
+for (let i = 1; i < filas; i++) {
+  let arr = [1];
+  for (let k = 1; k < i; k++) {
+    arr.push(E(i, k));
+  }
+  arr.push(1);
+  console.log(arr.join(" "));
+  arr = [];
+}

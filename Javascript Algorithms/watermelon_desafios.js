@@ -421,7 +421,81 @@ function amigos() {
   console.log(res)
 }
 
+/*
+29.- Removing Digits
+Te dan un entero N. En cada paso, puedes restar uno de los dígitos del número.
 
+¿Cuántos pasos se requieren para que el número sea igual a 0?
+
+Input  
+La única línea de entrada tiene un número entero n.
+
+Output  
+Imprime un entero: el número mínimo de pasos.
+
+Restricciones: 1 <= n <= 10 elevado a la sexta.
+*/
+
+const RemovingDigits = (n) => {
+  const cache = {}
+  return (n) => {
+    if (+n < 10) return n;
+    let nu = +n
+    let max = Math.max(...n.split('').map(Number))
+    let veces = 0;
+    while (n > 0) {
+      if (cache[n]) {
+        n = cache[n]
+        veces++
+        continue;
+      }
+      aux = n;
+      n = (nu - max) + ''
+      nu = +n
+      max = Math.max(...n.split('').map(Number))
+      cache[aux] = n;
+      veces++;
+    }
+    //console.log(cache)
+    return veces
+  }
+}
+
+const rm = RemovingDigits()
+
+console.time("rm 1")
+console.log(rm("100000000"))
+console.timeEnd("rm 1")
+
+console.time("rm 2")
+console.log(rm("10000000"))
+console.timeEnd("rm 2")
+
+console.time("rm 3")
+console.log(rm("1000000"))
+console.timeEnd("rm 3")
+
+console.time("rm 4")
+console.log(rm("100000"))
+console.timeEnd("rm 4")
+
+console.time("rm 5")
+console.log(rm("10000"))
+console.timeEnd("rm 5")
+
+
+console.time("rm 6")
+console.log(rm("1000"))
+console.timeEnd("rm 6")
+
+
+console.time("rm 7")
+console.log(rm("100"))
+console.timeEnd("rm 7")
+
+console.time("rm 8")
+console.log(rm("27"))
+console.timeEnd("rm 8")
 
 
 

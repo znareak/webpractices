@@ -435,33 +435,22 @@ Imprime un entero: el número mínimo de pasos.
 
 Restricciones: 1 <= n <= 10 elevado a la sexta.
 */
-
-const RemovingDigits = (n) => {
-  const cache = {}
-  return (n) => {
-    if (+n < 10) return n;
-    let nu = +n
-    let max = Math.max(...n.split('').map(Number))
-    let veces = 0;
-    while (n > 0) {
-      if (cache[n]) {
-        n = cache[n]
-        veces++
-        continue;
-      }
-      aux = n;
-      n = (nu - max) + ''
-      nu = +n
-      max = Math.max(...n.split('').map(Number))
-      cache[aux] = n;
-      veces++;
+const rm = (n) => {
+  const getMaxDigit = (m) => {
+    let arr = [];
+    while (m) {
+      arr.push(m % 10);
+      m = ~~(m / 10);
     }
-    //console.log(cache)
-    return veces
-  }
-}
-
-const rm = RemovingDigits()
+    return Math.max(...arr);
+  };
+  let steps = 0;
+  do {
+    n = n - getMaxDigit(n);
+    steps++;
+  } while (n > 0);
+  return steps;
+};
 
 console.time("rm 1")
 console.log(rm("100000000"))

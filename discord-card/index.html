@@ -18,84 +18,24 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/app.js" type="module" defer></script>
   </head>
 
   <body>
-    <div class="card">
-      <div class="card-coverpage">
-        <p>Cambiar Cartel</p>
-      </div>
+    <discord-card
+      username="zNareak"
+      id="0319"
+      bio="Estudiante de programación, me gusta jugar al ajedrez y en muy pocas ocasiones suelo dibujar."
+      style="margin-top: 1rem"
+    ></discord-card>
 
-      <div class="card-body">
-        <div class="card-profile">
-          <div class="card-profile-img">
-            <div class="card-change-profile">
-              <img src="./assets/changeImg.svg" alt="" class="card-change" />
-            </div>
-            <img
-              src="https://avatars.githubusercontent.com/u/22780669?v=4"
-              alt="zNareak Profile"
-              title="zNareak Profile"
-              class="card-avatar"
-            />
-            <div class="card-profile-status">
-              <svg>
-                <mask
-                  id="svg-mask-status-dnd"
-                  maskContentUnits="objectBoundingBox"
-                  viewBox="0 0 1 1"
-                >
-                  <circle fill="white" cx="0.5" cy="0.5" r="0.5"></circle>
-                  <rect
-                    fill="black"
-                    x="0.125"
-                    y="0.375"
-                    width="0.75"
-                    height="0.25"
-                    rx="0.125"
-                    ry="0.125"
-                  ></rect>
-                </mask>
-                <rect
-                  height="100%"
-                  width="100%"
-                  fill="hsl(359, calc(var(1, 1) * 82.6%), 59.4%)"
-                  mask="url(#svg-mask-status-dnd)"
-                ></rect>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-nitro">
-          <img
-            alt="Hyper"
-            aria-hidden="true"
-            src="./assets/hyper.svg"
-            class=""
-          />
-          <img
-            alt="Discord Nitro"
-            aria-hidden="true"
-            src="./assets/nitro.svg"
-            class=""
-          />
-        </div>
-
-        <div class="card-content">
-          <p class="card-username" data-id="0001">zNareaк</p>
-
-          <div class="card-divider"></div>
-
-          <p class="card-about">Sobre mi</p>
-          <p class="card-about-content">
-            Estudiante de programación, me gusta jugar al ajedrez y en muy pocas
-            ocasiones suelo dibujar.
-          </p>
-        </div>
-      </div>
-    </div>
+    <discord-card
+      username="zNareak"
+      id="0319"
+      bio="Estudiante de programación, me gusta jugar al ajedrez y en muy pocas ocasiones suelo dibujar."
+      style="margin-top: 1rem"
+    ></discord-card>
+    <span class="skeleton-box" style="width: 100px; height: 80px"></span>
   </body>
 </html>

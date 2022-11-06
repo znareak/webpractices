@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161616;
+}
+
+.card {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-top: 10rem;
+  background: #fff;
+  border: 4px solid #fff;
+  border-radius: 6px;
+
+  .card-coverpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    height: 120px;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4E16AQFDiJw0pts2UQ/profile-displaybackgroundimage-shrink_350_1400/0/1623601308739?e=1673481600&v=beta&t=7oXhvHLsXWIBS30PN2xIoH_R_451ZC4-rkWcdrxV-GM");
+    background-size: cover;
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+    cursor: pointer;
+
+    > p {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-size: 10px;
+      font-weight: bolder;
+      text-transform: uppercase;
+      opacity: 0;
+    }
+
+    &:hover {
+      &::before,
+      p {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle,
+        transparent 0%,
+        rgba(0, 0, 0, 0.5970763305322129) 100%
+      );
+    }
+  }
+
+  .card-body {
+    position: relative;
+    padding: 0 1rem 1rem 1rem;
+
+    .card-profile {
+      width: max-content;
+      margin-top: -2rem;
+
+      .card-profile-img {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border: 4px solid #fff;
+        border-radius: 50%;
+
+        .card-change,
+        .card-profile-status {
+          position: absolute;
+          z-index: 1;
+          border-radius: 50%;
+        }
+
+        .card-change {
+          right: 0;
+          top: 0;
+          background-color: rgb(216, 216, 216);
+          padding: 0.2rem;
+        }
+
+        .card-profile-status {
+          background: #fff;
+          width: 28px;
+          height: 28px;
+          top: 50px;
+          left: 50px;
+          > svg {
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            fill: #e0144c;
+          }
+        }
+
+        .card-avatar {
+          position: absolute;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          top: 0;
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .card-nitro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      padding: 0.2rem;
+      right: 1rem;
+      top: 3rem;
+      background-color: rgba(255, 255, 255, 0.705);
+      border-radius: 6px;
+    }
+
+    .card-content {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.301);
+
+      .card-username {
+        font-weight: bolder;
+        font-size: 18px;
+        margin-bottom: 0.5rem;
+
+        &::after {
+          content: "#" attr(data-id);
+          color: rgb(82, 82, 82);
+        }
+      }
+
+      .card-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #6c6c6c4d;
+        margin: 0.8rem 0;
+      }
+
+      .card-about {
+        font-size: 12px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      .card-about-content {
+        font-size: 12px;
+        color: rgb(71 85 105);
+        line-height: 1.5;
+      }
+    }
+  }
+}

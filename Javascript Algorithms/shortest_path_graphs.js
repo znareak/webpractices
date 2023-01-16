@@ -55,3 +55,34 @@ const graph = {
 
 //bfs(graph, "E");
 bfs(graph, "G");
+
+
+function shortestPath(graph, start, end) {
+  let distances = {};
+  let previous = {};
+  let queue = new Set([start]);
+  let path = [];
+  for (let node in graph) {
+    distances[node] = Infinity;
+  }
+  distances[start] = 0;
+  while (queue.size) {
+    let current = [...queue].sort((a, b) => distances[a] - distances[b])[0];
+    queue.delete(current);
+    for (let neighbor in graph[current]) {
+      let distance = graph[current][neighbor];
+      if (distances[neighbor] > distances[current] + distance) {
+        distances[neighbor] = distances[current] + distance;
+        previous[neighbor] = current;
+        queue.add(neighbor);
+      }
+    }
+  }
+  if (distances[end] !== Infinity) {
+    for (let node = end; node !== start; node = previous[node]) {
+      path.unshift(node);
+    }
+    path.unshift(start);
+    console.log(path);
+  }
+};

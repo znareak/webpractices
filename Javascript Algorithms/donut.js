@@ -50,3 +50,25 @@ const renderDonut = () => {
 };
 
 setInterval(renderDonut, 120);
+
+
+/*
+A = B = 0;
+setInterval(() => {
+    b = Array(1760).fill(" "), z = Array(1760).fill(0);
+    for (j = 0; j < 6.28; j += 0.07)
+        for (i = 0; i < 6.28; i += 0.02) {
+            c = Math.sin(i), d = Math.cos(j), e = Math.sin(A), f = Math.sin(j),
+            g = Math.cos(A), D = 1 / (c * (d + 2) * e + f * g + 5),
+            l = Math.cos(i), m = Math.cos(B), n = Math.sin(B), t = c * (d + 2) * g - f * e,
+            x = 40 + 30 * D * (l * (d + 2) * m - t * n) | 0,
+            y = 12 + 15 * D * (l * (d + 2) * n + t * m) | 0,
+            o = x + 80 * y, N = 8 * ((f * e - c * d * g) * m - c * d * e - f * g - l * d * n) | 0;
+            if (y > 0 && y < 22 && x > 0 && x < 80 && D > z[o]) z[o] = D, b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
+        }
+    console.clear();
+    console.log(b.join("").replace(/(.{80})/g, "$1\n"));
+    A += 0.04;
+    B += 0.02;
+}, 120);
+*/

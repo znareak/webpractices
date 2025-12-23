@@ -5,7 +5,7 @@
   "main": "flat-array.libardo.js",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^9.1.0"
+    "mocha": "^11.1.0"
   },
   "scripts": {
     "test": "npx mocha ./__tests__"
